@@ -55,7 +55,7 @@ GEM
       dm-core (~> 1.2.0)
       fastercsv (~> 1.5)
       json (~> 1.6)
-      multi_json (~> 1.0)
+      multi_json (= 1.12.0)
       stringex (~> 1.4)
       uuidtools (~> 2.1)
     dm-validations (1.2.0)
@@ -80,6 +80,7 @@ GEM
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
+    rake (10.4.2)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -117,9 +118,13 @@ DEPENDENCIES
   data_mapper
   dm-migrations
   dm-postgres-adapter
+  rake
   rspec
   rspec-sinatra
   sinatra
+
+RUBY VERSION
+   ruby 2.2.3p173
 
 BUNDLED WITH
    1.13.7
