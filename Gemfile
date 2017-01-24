@@ -11,5 +11,9 @@ gem 'dm-postgres-adapter'
 gem 'rspec-sinatra'
 gem 'sinatra'
 gem 'dm-migrations'
+gem 'dm-transactions'
 gem 'rake'
 
+group :test do
+  gem 'database_cleaner'
+end
