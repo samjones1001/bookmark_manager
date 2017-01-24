@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'rspec'
 
 class BMM < Sinatra::Base
   get '/' do
