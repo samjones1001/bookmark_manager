@@ -1,8 +1,19 @@
-# frozen_string_literal: true
-source "https://rubygems.org"
 
-# gem "rails"
-gem 'rspec-sinatra'
-gem 'sinatra'
+
+source 'https://rubygems.org'
+
+ruby '2.2.3'
+
 gem 'rspec'
 gem 'capybara'
+gem 'data_mapper'
+gem 'dm-postgres-adapter'
+gem 'rspec-sinatra'
+gem 'sinatra'
+gem 'dm-migrations'
+gem 'dm-transactions'
+gem 'rake'
+
+group :test do
+  gem 'database_cleaner'
+end
