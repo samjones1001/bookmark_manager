@@ -6,7 +6,7 @@ require './models/link'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
-require './models/link'
+require './app'
 
 #<<<<<<< HEAD
 #Capybara.app = BookmarkManager
