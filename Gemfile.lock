@@ -75,6 +75,7 @@ GEM
     multi_json (1.12.1)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
+    pg (0.19.0)
     public_suffix (2.0.5)
     rack (1.6.5)
     rack-protection (1.5.3)
@@ -121,6 +122,7 @@ DEPENDENCIES
   dm-migrations
   dm-postgres-adapter
   dm-transactions
+  pg
   rake
   rspec
   rspec-sinatra
@@ -130,4 +132,4 @@ RUBY VERSION
    ruby 2.2.3p173
 
 BUNDLED WITH
-   1.13.7
+   1.14.2
