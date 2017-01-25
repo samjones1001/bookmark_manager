@@ -1,5 +1,5 @@
-require 'spec_helper'
-require 'database_cleaner'
+#require 'spec_helper'
+
 
 
 feature 'Creating links' do
