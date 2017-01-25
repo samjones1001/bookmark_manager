@@ -14,4 +14,4 @@ gem 'dm-migrations'
 gem 'dm-transactions'
 gem 'rake'
 gem 'database_cleaner'
-
+gem 'pg'
