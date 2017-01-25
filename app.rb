@@ -8,7 +8,7 @@ require './models/link'
 
 class BMM < Sinatra::Base
   get '/' do
-    erb :manage
+    erb :'links/manage'
   end
 
   get '/links' do
