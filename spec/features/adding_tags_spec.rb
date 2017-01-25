@@ -7,11 +7,8 @@ feature "Add tags" do
   fill_in('tag', with: "Education")
   click_button('submit')
 
-    expect(current_path).to eq '/links'
-    within 'ul#links' do
-      expect(page).to have_content("Makers Academy")
-      expect(page).to have_content("http://www.makersacademy.com")
-      expect(page).to have_content("Education")
-    end
+    link = Link.first
+    expect(link.tags.map(&:name)).to include('Education')
+
   end
 end
