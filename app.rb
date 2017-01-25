@@ -8,8 +8,7 @@ require './models/link'
 
 class BMM < Sinatra::Base
   get '/' do
-    'Hello BMM!'
-    redirect '/links'
+    erb :manage
   end
 
   get '/links' do
@@ -17,6 +16,9 @@ class BMM < Sinatra::Base
     erb :'links/index'
   end
 
+  post '/links' do
+    Link.create(url: params[:url], title: params[:title])
+  end
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

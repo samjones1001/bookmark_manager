@@ -2,8 +2,13 @@
 
 <ul id='links'>
   <% @link.each do |link| %>
-    <li> Title: <%= link.title %>
-         URL:   <%= link.url %>
+    <li>Title: <%= link.title %>
+        URL:<a href="<%="link.url"%></a>
     </li>
   <% end %>
 </ul>
+
+<!-- post from '/' with title and url
+use params - session variables
+to add new link to DB
+Confirm message 'link added'-->
