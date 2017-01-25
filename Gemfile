@@ -13,7 +13,5 @@ gem 'sinatra'
 gem 'dm-migrations'
 gem 'dm-transactions'
 gem 'rake'
+gem 'database_cleaner'
 
-group :test do
-  gem 'database_cleaner'
-end
