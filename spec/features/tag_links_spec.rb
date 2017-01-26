@@ -10,7 +10,16 @@ feature 'add tags to links' do
 	  fill_in :tags, with: 'Search Engine'
 	  click_button 'Add Link'
 	  
-	  link = Link.first
-      expect(link.tags.map(&:name)).to include('Search Engine')
+	  expect(page).to have_content('Search Engine')
     end	
+
+    scenario 'add multiple tags to a link' do
+    	visit '/new'
+    	fill_in :url, with: 'http://www.google.com'
+	  	fill_in :title, with: 'Google'
+	  	fill_in :tags, with: 'Search Engine, Coding advice'
+	  	click_button 'Add Link'
+    	link = Link.first
+    	expect(page).to have_content("Search Engine, Coding advice")
+    end
 end
