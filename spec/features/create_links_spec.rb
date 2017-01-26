@@ -3,7 +3,7 @@
 # I would like to add the site's address and title to my bookmark manager
 
 feature 'add new links' do 
-	scenario 'user can add new links to the list' do
+	scenario 'add new links to the list' do
 	  visit '/new'
 	  fill_in :url, with: 'http://www.google.com'
 	  fill_in :title, with: 'Google'
