@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Bookie </title>
+</head>
+
+<body>
+  <% if @current_user %>
+    <p>Welcome to bookmark manager, <%= @current_user.email %></p>
+  <% end %>
+
+  <% if flash[:notice] %>
+    <div id='notice'><%= flash[:notice] %></div>
+  <% end %>
+
+  <%=yield %>
+</body>
+
+</html>

@@ -9,12 +9,12 @@ class User
 
   has n, :links, through: Resource
 
-  property :id, 		  Serial
-  property :email, 		String
-  property :password_digest, 	Text
+  property :id, 		          Serial
+  property :email, 		        String, required: true, format: :email_address
+  property :password_digest, 	Text,   required: true
 
   validates_confirmation_of :password
-  validates_format_of :email, :as => :email_address
+  validates_uniqueness_of :email
 
   def password=(password)
   	@password = password

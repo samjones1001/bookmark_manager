@@ -11,8 +11,11 @@ class BookmarkManager < Sinatra::Base
 
   register Sinatra::Flash
 
-  get '/tags/:name' do
+  before do
     @current_user = current_user
+  end
+
+  get '/tags/:name' do
     tag = Tag.first(name: params[:name])
     @links = tag ? tag.links : []
     erb :'links/index'
