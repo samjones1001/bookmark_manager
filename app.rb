@@ -20,10 +20,8 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/user' do
-    new_user = User.new(email: params[:email])
-    new_user.password = params[:password]
-    session[:current_user] = new_user.clone
-    new_user.save
+    user = User.create(email: params[:email], password: params[:password])
+    session[:user_id] = user.id
     redirect 'links'
   end
 
@@ -50,6 +48,12 @@ class BookmarkManager < Sinatra::Base
 
   get '/register' do
     erb :sign_up
+  end
+
+  helpers do
+    def current_user
+      @current_user ||= User.get(session[:user_id])
+    end
   end
 
   # start the server if ruby file executed directly

@@ -1,0 +1,16 @@
+[32m.[0m[31mF[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m
+
+Failures:
+
+  1) registering users regitering a user
+     [31mFailure/Error: expect(page).to have_content('Welcome to bookmark manager, my_email@email.com')[0m
+     [31m  expected to find text "Welcome to bookmark manager, my_email@email.com" in "Bookmarks"[0m
+     [36m# ./spec/features/sign_up_spec.rb:9:in `block (2 levels) in <top (required)>'[0m
+
+Finished in 0.38012 seconds (files took 1.06 seconds to load)
+[31m6 examples, 1 failure[0m
+
+Failed examples:
+
+[31mrspec ./spec/features/sign_up_spec.rb:3[0m [36m# registering users regitering a user[0m
+
