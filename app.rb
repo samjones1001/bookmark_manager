@@ -16,7 +16,7 @@ class BookmarkManager < Sinatra::Base
 
   post '/links' do
   	link = Link.new(url: params[:url], title: params[:title])
-    tags = params[:tags].split(",")
+    tags = params[:tags].split(",") unless param[:tags].nil?
     tags.each do |single_tag|
       tag  = Tag.first_or_create(name: single_tag.strip)
       link.tags << tag
@@ -33,6 +33,10 @@ class BookmarkManager < Sinatra::Base
 
   get '/new' do
   	erb :new
+  end
+
+  get '/register' do
+    erb :sign_up
   end
 
   # start the server if ruby file executed directly
