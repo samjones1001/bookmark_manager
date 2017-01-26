@@ -2,11 +2,10 @@ require 'bcrypt'
 
 class User
   include DataMapper::Resource
+  BCrypt::Engine.cost = 1
 
   attr_reader :password
   attr_accessor :password_confirmation
-
-  BCrypt::Engine.cost = 1
 
   has n, :links, through: Resource
 
@@ -21,5 +20,4 @@ class User
   	@password = password
   	self.password_digest = BCrypt::Password.create(password)
   end
-
 end

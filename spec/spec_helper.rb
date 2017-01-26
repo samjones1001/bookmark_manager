@@ -1,13 +1,11 @@
 ENV['RACK_ENV'] = 'test'
 
-require File.join(File.dirname(__FILE__), '..', 'app.rb')
-
-require './app/models/link.rb'
 require 'capybara'
 require 'capybara/rspec'
-require 'rspec'
-require './app'
 require 'database_cleaner'
+require 'rspec'
+require './app/app'
+#H:\makers\wk4\bookmark\app\app.rb
 
 
 Capybara.app = BookmarkManager

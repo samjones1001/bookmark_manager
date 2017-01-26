@@ -2,7 +2,7 @@ ENV['RACK_ENV'] ||= 'development'
 
 require 'sinatra/flash'
 require 'sinatra/base'
-require_relative './app/datamapper_setup.rb'
+require_relative 'datamapper_setup'
 
 
 class BookmarkManager < Sinatra::Base
