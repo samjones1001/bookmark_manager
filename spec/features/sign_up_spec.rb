@@ -1,7 +1,7 @@
 feature 'registering users' do
 
   scenario 'registering a user' do
-  	visit('/register')
+  	visit('/user/new')
   	fill_in :email, with: 'my_email@email.com'
   	fill_in :password, with: 'password'
     fill_in :password_confirmation, with: 'password'
@@ -12,7 +12,7 @@ feature 'registering users' do
   end
 
   scenario 'bad confirmation password' do
-    visit('/register')
+    visit('/user/new')
   	fill_in :email, with: 'my_email@email.com'
   	fill_in :password, with: 'password'
     fill_in :password_confirmation, with: 'password1234'
@@ -24,7 +24,7 @@ feature 'registering users' do
   end
 
   scenario 'bad confirmation password' do
-    visit('/register')
+    visit('/user/new')
   	fill_in :email, with: 'my_emailatemail'
   	fill_in :password, with: 'password'
     fill_in :password_confirmation, with: 'password'

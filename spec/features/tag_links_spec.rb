@@ -4,7 +4,7 @@
 
 feature 'add tags to links' do
 	scenario 'set up a bookmark with a tag' do
-	  visit '/new'
+	  visit '/links/new'
 	  fill_in :url, with: 'http://www.google.com'
 	  fill_in :title, with: 'Google'
 	  fill_in :tags, with: 'Search Engine'
@@ -14,7 +14,7 @@ feature 'add tags to links' do
     end
 
     scenario 'add multiple tags to a link' do
-    	visit '/new'
+    	visit '/links//new'
     	fill_in :url, with: 'http://www.google.com'
 	  	fill_in :title, with: 'Google'
 	  	fill_in :tags, with: 'Search Engine,Coding advice'
