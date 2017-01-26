@@ -8,47 +8,53 @@ class BookmarkManager < Sinatra::Base
   enable :sessions
   set :session_secret, "secret"
 
-  get '/' do
-    redirect 'links'
-  end
-
-  get '/links' do
-    @current_user = session[:current_user]
-    @current_user_email = @current_user.email unless @current_user.nil?
-  	@links = Link.all
-  	erb :links
-  end
-
-  post '/user' do
-    user = User.create(email: params[:email], password: params[:password])
-    session[:user_id] = user.id
-    redirect 'links'
-  end
-
-  post '/links' do
-  	link = Link.new(url: params[:url], title: params[:title])
-    tags = params[:tags].split(",")
-    tags.each do |single_tag|
-      tag  = Tag.first_or_create(name: single_tag.strip)
-      link.tags << tag
-    end
-    link.save
-  	redirect 'links'
-  end
-
   get '/tags/:name' do
+    @current_user = current_user
     tag = Tag.first(name: params[:name])
     @links = tag ? tag.links : []
     erb :'links'
   end
 
   get '/new' do
-  	erb :new
+    @current_user = current_user
+    p current_user
+    erb :new
   end
 
   get '/register' do
     erb :sign_up
   end
+
+  get '/' do
+    @current_user = current_user
+    redirect 'links'
+  end
+
+  get '/links' do
+    @current_user = current_user
+    @links = Link.all
+    erb :links
+  end
+
+  post '/user' do
+    user = User.new(email: params[:email])
+    user.set_password params[:password]
+    user.save
+    session[:user_id] = user.id
+    redirect 'links'
+  end
+
+  post '/links' do
+    link = Link.new(url: params[:url], title: params[:title])
+    tags = params[:tags].split(",")
+    tags.each do |single_tag|
+      tag  = Tag.first_or_create(name: single_tag.strip)
+      link.tags << tag
+    end
+    link.save
+    redirect 'links'
+  end
+
 
   helpers do
     def current_user
