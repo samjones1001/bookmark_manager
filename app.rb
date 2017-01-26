@@ -6,22 +6,22 @@ require_relative './app/datamapper_setup.rb'
 
 class BookmarkManager < Sinatra::Base
   enable :sessions
+  set :session_secret, "secret"
 
   get '/' do
     redirect 'links'
   end
 
   get '/links' do
-    current_user = session[:current_user]
-    @current_user_email = current_user.email unless current_user.nil?
-    p@current_user_email
-
+    @current_user = session[:current_user]
+    @current_user_email = @current_user.email unless @current_user.nil?
   	@links = Link.all
   	erb :links
   end
 
   post '/user' do
-    new_user = User.new(email: params[:email], password: params[:password])
+    new_user = User.new(email: params[:email])
+    new_user.password = params[:password]
     session[:current_user] = new_user.clone
     new_user.save
     redirect 'links'
