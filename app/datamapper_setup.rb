@@ -1,5 +1,7 @@
 require 'data_mapper'
 require 'dm-postgres-adapter'
+require 'dm-validations'
+
 require_relative './models/tag.rb'
 require_relative './models/link.rb'
 require_relative './models/user.rb'

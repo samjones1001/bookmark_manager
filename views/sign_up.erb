@@ -1,9 +1,13 @@
 <form action = '/user' method = 'POST'>
+
   <label for="email"> email: </label>
-  <input type = "text" name = "email" value = "<%= @user.email %>"/>
+  <input type = "email" name = "email" value = "<%= @user.email %>"/>
+
   <label for="password"> password: </label>
   <input type = "text" name = "password"/>
+
   <label for="password_confirmation"> password: </label>
   <input type = "text" name = "password_confirmation"/>
+
   <input type = "submit" value = "Sign up"/>
 </form>
