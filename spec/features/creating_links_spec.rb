@@ -1,8 +1,10 @@
 #require 'spec_helper'
 
-
-
 feature 'Creating links' do
+
+	before(:each) do
+		sign_up
+	end
 
 		scenario "Add the site's address and title to bookmark manager" do
 		visit('/links/new')

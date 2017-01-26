@@ -2,6 +2,9 @@
 
 feature 'View Links' do
 
+  before(:each) do
+    sign_up
+  end
 
   scenario 'get all stored URL links' do
     Link.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')

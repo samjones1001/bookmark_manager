@@ -1,6 +1,7 @@
 feature 'Filter by Tag' do
 
   before(:each) do
+    sign_up
     Link.create(url: 'http://www.makersacademy.com', title: 'Makers Academy', tags: [Tag.first_or_create(name: 'education')])
     Link.create(url: 'http://www.google.com', title: 'Google', tags: [Tag.first_or_create(name: 'search')])
   end
