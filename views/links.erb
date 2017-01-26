@@ -9,4 +9,6 @@
     </li>
   <% end %>
 </ul>
-
+<% if @current_user_email %>
+  <p>Welcome to bookmark manager, <%= @current_user_email %></p>
+<% end %>
