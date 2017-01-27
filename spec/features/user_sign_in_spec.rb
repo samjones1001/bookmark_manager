@@ -4,8 +4,7 @@ feature "User sign in" do
     visit('sessions/new')
     fill_in('email', with: "paulyjgooders@gmail.com")
     fill_in('password', with: "password123")
-    click("Sign in")
-    # expect(current_path).to eq ('/links')
+    click_button("Sign in")
     expect(page).to have_content "Welcome, paulyjgooders@gmail.com"
   end
 end
