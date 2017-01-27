@@ -11,11 +11,12 @@ class User
   include DataMapper::Resource
 
   validates_confirmation_of(:password)
-
+  validates_format_of :email, :as => :email_address
+  validates_presence_of :email
 
   # these property declarations set the column headers in the 'links' table
   property :id,     Serial # Serial means that it will be auto-incremented for every record
-  property :email,    String
+  property :email,    String, :required => true
   property :password_digest, Text
 
   def password=(password)
