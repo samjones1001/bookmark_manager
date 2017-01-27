@@ -20,4 +20,11 @@ feature 'User Sign Up' do
       expect { sign_up(email: "test@test") }.not_to change(User, :count)
 
   end
+
+  scenario 'cannot sign up with a duplicate email address' do
+    sign_up
+    expect{ sign_up }.not_to change(User, :count)
+    expect(page).to have_content 'Email is already taken'
+  end
+
 end
