@@ -1,25 +1,36 @@
 ## Bookmark Manager
 #### Technologies: Ruby, Sintra, PostgreSQL, DataMapper, Rspec, Capybara, HTML, CSS
 ### Week 4 pair programming challenge for [Makers Academy] (http://www.makersacademy.com)
-[Outline](#outline) | [Screenshots](#screenshots) | [User Stories](#user-stories) | [Gems](#gems) | [Usage Instructions](#usage-instructions) 
+[Outline](#outline) | [User Stories](#user-stories) | [Gems](#gems) | [Usage Instructions](#usage-instructions) 
 
 ## Brief
-
+You're going to build a bookmark manager. A bookmark manager is a website to maintain a collection of URLs. You can use it to save a webpage you found useful. You can add tags to the webpages you saved to find them later. You can browse links other users have added.
 
 ## Outline
 
 
-## Screenshots  
-#### Welcome screen
-![Welcome screen](/public/img/welcome.png?raw=true "Welcome screen")
-#### Choose your weapon!
-![Choose you weapon!](/public/img/choose.png?raw=true "Choose your weapon")
-#### Results screen
-![Results screen](/public/img/summary.png?raw=true "Results screen")
 
 ## User Stories
 ```
+As a time-pressed user
+So that I can quickly go to web sites I regularly visit
+I would like to see a list of links on the homepage
 
+As a time-pressed user
+So that I can quickly find web sites I recently bookmarked
+I would like to see links in descending chronological order
+
+As a time-pressed user
+So that I can save a website
+I would like to add the site's address and title to my bookmark manager
+
+As a time-pressed user
+So that I can organise my many links into different categories for ease of search
+I would like to add tags to the links in my bookmark manager
+
+As a time-pressed user
+So that I can quickly find links on a particular topic
+I would like to filter links by tag
 ```
 
 ## Gems
