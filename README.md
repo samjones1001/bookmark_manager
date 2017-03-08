@@ -7,8 +7,7 @@
 You're going to build a bookmark manager. A bookmark manager is a website to maintain a collection of URLs. You can use it to save a webpage you found useful. You can add tags to the webpages you saved to find them later. You can browse links other users have added.
 
 ## Outline
-
-
+This project was my first experience of using a database to persist information.  I gained a good baseline understanding of CRUD methods which I was able to put to use in later projects.
 
 ## User Stories
 ```
@@ -35,7 +34,19 @@ I would like to filter links by tag
 
 ## Gems
 ```ruby
+gem 'rspec'
+gem 'sinatra'
+gem 'rspec-sinatra'
+gem 'capybara'
+gem 'data_mapper'
+gem 'dm-postgres-adapter'
+gem 'rake'
+gem 'bcrypt'
+gem 'sinatra-flash'
 
+group :test do
+  gem 'database_cleaner'
+end
 ```
 
 ## Usage Instructions
